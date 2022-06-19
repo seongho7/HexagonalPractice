@@ -1,0 +1,49 @@
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:~/sh;
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+  properties:
+    hibernate:
+      format_sql: true
+
+
+springdoc:
+  packages-to-scan: com.sh.hexagonal
+  default-produces-media-type: application/json
+  writer-with-default-pretty-printer: true
+  override-with-generic-response: false
+
+app:
+  auth:
+    token-secret: 04ca023b39512e46d0c2cf4b48d5aac61d34302994c87ed4eff225dcf3b0a218739f3897051a057f9b846a69ea2927a587044164b7bae5e1306219d50b588cb1
+    token-expiration-msec: 864000000
+  crypto:
+    key: MRbuwc3F5nOxoRS3ZOIib1n4WiDM8qNW
+
+feign:
+  client:
+    config:
+      codeTest:
+        connectTimeout: 3000
+        readTimeout: 20000
+        errorDecoder: com.sh.hexagonal.refund.adapter.out.sh.ShErrorDecoder
+        retryer: feign.Retryer.Default
+logging.level:
+  org.hibernate.SQL: debug

@@ -1,0 +1,36 @@
+### 회원가입
+POST http://localhost:8080/sh/signup
+Content-Type: application/json
+
+{
+  "userId": "userId",
+  "password": "1234",
+  "name": "네이버",
+  "regNo": "901010-1234567"
+}
+
+### 로그인
+POST http://localhost:8080/sh/login
+Content-Type: application/json
+
+{
+  "userId": "userId",
+  "password": "1234"
+}
+
+### 내정보
+GET http://localhost:8080/sh/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ODgwNjIxNjUzMTUwNDc0MjQiLCJpYXQiOjE2NTU2NDI3ODQsImV4cCI6MTY1NjUwNjc4NH0.HLGzOuZLIvvm6PANi8qMplvnFvNUSRauTsvLmqtSikd5z-4M4274SKf1DXWm8eqAVSqxFBR7D79PBytgVOGBFQ
+
+### 스크랩
+POST http://localhost:8080/sh/scrap
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ODgwNjIxNjUzMTUwNDc0MjQiLCJpYXQiOjE2NTU2NDI3ODQsImV4cCI6MTY1NjUwNjc4NH0.HLGzOuZLIvvm6PANi8qMplvnFvNUSRauTsvLmqtSikd5z-4M4274SKf1DXWm8eqAVSqxFBR7D79PBytgVOGBFQ
+
+
+### 환급액 계산
+GET http://localhost:8080/sh/refund
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ODgwNjIxNjUzMTUwNDc0MjQiLCJpYXQiOjE2NTU2NDI3ODQsImV4cCI6MTY1NjUwNjc4NH0.HLGzOuZLIvvm6PANi8qMplvnFvNUSRauTsvLmqtSikd5z-4M4274SKf1DXWm8eqAVSqxFBR7D79PBytgVOGBFQ
+
